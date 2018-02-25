@@ -17,12 +17,12 @@
         </div>
         <div class="container">
             <div class="row">
-                <divv class="col-md-12">
+                <div class="col-md-12">
                     <a class="btn btn-default btn-primary btn-block"
                        href="/exams"
                        role="button">Exams
                     </a>
-                </divv>
+                </div>
             </div>
         </div>
         <!-- JavaScript -->
