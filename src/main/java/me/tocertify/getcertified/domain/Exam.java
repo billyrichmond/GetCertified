@@ -6,23 +6,23 @@ public class Exam implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private String examId;
+    private int examId;
     private String name;
 
     public Exam() {
         super();
     }
 
-    public Exam(String examId, String name) {
+    public Exam(int examId, String name) {
         this.examId = examId;
         this.name = name;
     }
 
-    public String getExamId() {
+    public int getExamId() {
         return examId;
     }
 
-    public void setExamId(String examId) {
+    public void setExamId(int examId) {
         this.examId = examId;
     }
 
@@ -34,6 +34,22 @@ public class Exam implements Serializable {
         this.name = name;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        boolean flag = false;
+        Exam exam = (Exam) obj;
+        if (exam.examId == examId)
+            flag = true;
+
+        return flag;
+    }
+
+    @Override
+    public int hashCode() {
+        return examId;
+    }
+
+    /*
     @Override
     public boolean equals(Object obj) {
         if (this == obj)
@@ -52,7 +68,9 @@ public class Exam implements Serializable {
 
         return true;
     }
+    */
 
+    /*
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -61,5 +79,6 @@ public class Exam implements Serializable {
 
         return result;
     }
+    */
 
 }
