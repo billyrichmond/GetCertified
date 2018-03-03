@@ -15,13 +15,29 @@
                 <div class="row">
                     <header class="col-md-12">
                         <h1>Exam</h1>
-                        <p>${exam.name}</p>
+                        <p>${exam.examName} - ${exam.examNumber}</p>
                         <a class="btn btn-default btn-primary"
                            href="/"
                            role="button">Home
                         </a>
                     </header>
                 </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <c:choose>
+                    <c:when test="${examQuestionsIsEmpty}">
+                        <div class="col-md-12">
+                            <div class="thumbnail">
+                                <h4 class="text-center">There are no questions entered for this exam</h4>
+                            </div>
+                        </div>
+                    </c:when>
+                    <c:otherwise>
+                        <p>Records!</p>
+                    </c:otherwise>
+                </c:choose>
             </div>
         </div>
 

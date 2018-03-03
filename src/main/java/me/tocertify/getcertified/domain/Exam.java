@@ -7,15 +7,17 @@ public class Exam implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private int examId;
-    private String name;
+    private String examName;
+    private String examNumber;
 
     public Exam() {
         super();
     }
 
-    public Exam(int examId, String name) {
+    public Exam(int examId, String examName, String examNumber) {
         this.examId = examId;
-        this.name = name;
+        this.examName = examName;
+        this.examNumber = examNumber;
     }
 
     public int getExamId() {
@@ -26,12 +28,20 @@ public class Exam implements Serializable {
         this.examId = examId;
     }
 
-    public String getName() {
-        return name;
+    public String getExamName() {
+        return examName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setExamName(String examName) {
+        this.examName = examName;
+    }
+
+    public String getExamNumber() {
+        return examNumber;
+    }
+
+    public void setExamNumber(String examNumber) {
+        this.examNumber = examNumber;
     }
 
     @Override
