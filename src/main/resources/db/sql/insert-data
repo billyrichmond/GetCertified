@@ -1,3 +1,7 @@
+INSERT INTO Certification (CertName)
+    VALUES ('Java SE 8 Programmer I');
+
+/*
 INSERT INTO question_type (question_type_text)
     VALUES ('FILL-IN-THE-BLANK');
 
@@ -6,3 +10,4 @@ INSERT INTO question_type (question_type_text)
 
 INSERT INTO exam (exam_name, exam_number)
     VALUES ('Java SE 8 Programmer I',  'IZO-808');
+*/

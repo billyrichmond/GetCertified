@@ -1,3 +1,35 @@
+CREATE TABLE Certification (
+  CertId INT NOT NULL AUTO_INCREMENT,
+  CertName VARCHAR(255),
+  PRIMARY KEY (certId)
+);
+
+CREATE TABLE Exam (
+  ExamId int NOT NULL AUTO_INCREMENT,
+  ExamName VARCHAR(255),
+  CertId INT,
+  PRIMARY KEY (ExamId),
+  FOREIGN KEY (CertId) REFERENCES Certification (CertId)
+);
+
+CREATE TABLE QuestionType (
+  QuestionTypeId int NULL AUTO_INCREMENT,
+  QuestionTypeText VARCHAR(255) NOT NULL,
+  PRIMARY KEY (QuestionTypeId)
+);
+
+CREATE TABLE Question (
+  QuestionId INT NOT NULL AUTO_INCREMENT,
+  QuestionText TEXT NOT NULL,
+  ExamId INT
+  PRIMARY KEY (QuestionId),
+  FOREIGN KEY (ExamId) REFERENCES Exam (ExamId)
+);
+
+
+
+
+/*
 CREATE TABLE exam (
   exam_id INT NOT NULL AUTO_INCREMENT,
   exam_name VARCHAR(255),
@@ -26,3 +58,4 @@ CREATE TABLE answer (
   answer_id INT NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (answer_id)
 );
+*/
