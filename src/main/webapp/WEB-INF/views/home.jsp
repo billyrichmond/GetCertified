@@ -21,23 +21,11 @@
                     <div class="thumbnail">
                         <div class="caption">
                             <h3>Certifications</h3>
-                            <c:if test="${allCertsSize == 0}">
-                                <p>
-                                    There are no certification entered
-                                </p>
-                            </c:if>
-                            <c:if test="${allCertsSize == 1}">
-                                <p>
-                                    There is 1 certification entered
-                                </p>
-                            </c:if>
-                            <c:if test="${allCertsSize > 1}">
-                                <p>
-                                    There are ${allCertsSize} certifications entered
-                                </p>
-                            </c:if>
+                            <p>
+                                Number of certifications : ${certs}
+                            </p>
                             <a class="btn btn-primary"
-                               href="#"
+                               href="/certs"
                                role="button">Go
                             </a>
                         </div>
@@ -47,13 +35,11 @@
                     <div class="thumbnail">
                         <div class="caption">
                             <h3>Exams</h3>
-                            <c:if test="${allExamsSize == 0}">
-                                <p>
-                                    There are no exams entered
-                                </p>
-                            </c:if>
+                            <p>
+                                Number of exams : ${exams}
+                            </p>
                             <a class="btn btn-primary"
-                               href="#"
+                               href="/exams"
                                role="button">Go
                             </a>
                         </div>
@@ -63,18 +49,9 @@
                     <div class="thumbnail">
                         <div class="caption">
                             <h3>Practice Tests</h3>
-                            <c:choose>
-                                <c:when test="">
-                                    <p>
-                                        There are no practice exams entered
-                                    </p>
-                                </c:when>
-                                <c:otherwise>
-                                    <p>
-                                        X practice tests
-                                    </p>
-                                </c:otherwise>
-                            </c:choose>
+                            <p>
+                                Number of practice tests :
+                            </p>
                             <a class="btn btn-primary"
                                href="#"
                                role="button">Go
@@ -86,18 +63,9 @@
                     <div class="thumbnail">
                         <div class="caption">
                             <h3>Glossary</h3>
-                            <c:choose>
-                                <c:when test="">
-                                    <p>
-                                        There are no words in the glossary
-                                    </p>
-                                </c:when>
-                                <c:otherwise>
-                                    <p>
-                                        X words in the glossary
-                                    </p>
-                                </c:otherwise>
-                            </c:choose>
+                            <p>
+                                Number of terms :
+                            </p>
                             <a class="btn btn-primary"
                                href="#"
                                role="button">Go

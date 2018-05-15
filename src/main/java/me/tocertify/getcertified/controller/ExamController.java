@@ -21,7 +21,6 @@ public class ExamController {
         model.addAttribute("exams", examService.getAllExams());
 
         return "exams";
-
     }
 
     @RequestMapping("/exam")

@@ -21,11 +21,33 @@ public class CertRepositoryImpl implements CertRepository {
 
     @Override
     public List<Cert> getAllCerts() {
-        String SQL = "SELECT * FROM Certification";
+        String SQL = "SELECT * FROM Certification ORDER BY CertName";
         Map<String, Object> params = new HashMap<>();
         List<Cert> result = jdbcTemplate.query(SQL, params, new CertMapper());
 
         return result;
+    }
+
+    @Override
+    public Cert getCertById(int certId) {
+        String SQL = "SELECT * FROM certification WHERE cert_id = :certId";
+        Map<String, Object> params = new HashMap<>();
+        params.put("certId", certId);
+
+        return jdbcTemplate.queryForObject(SQL, params, new CertMapper());
+    }
+
+    @Override
+    public void addCert(Cert cert) {
+        String SQL = "INSERT INTO CERTIFICATION "
+                + "(CERTNAME) "
+                + "VALUES (:CertName)";
+
+        Map<String, Object> params = new HashMap<>();
+
+        params.put("CertName", cert.getCertName());
+
+        jdbcTemplate.update(SQL, params);
     }
 
     private static final class CertMapper implements RowMapper<Cert> {

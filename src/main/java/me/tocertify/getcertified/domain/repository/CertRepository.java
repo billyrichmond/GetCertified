@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface CertRepository {
     List<Cert> getAllCerts();
+    Cert getCertById(int certId);
+    void addCert(Cert cert);
 }

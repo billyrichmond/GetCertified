@@ -25,8 +25,8 @@ public class HomeController {
         model.addAttribute("title", "GetCertified");
         model.addAttribute("subtitle","My personal certification web app");
 
-        model.addAttribute("allCertsSize", certService.getAllCerts().size());
-        model.addAttribute("allExamsSize", examService.getAllExams().size());
+        model.addAttribute("certs", certService.getAllCerts().size());
+        model.addAttribute("exams", examService.getAllExams().size());
         return "home";
     }
 }

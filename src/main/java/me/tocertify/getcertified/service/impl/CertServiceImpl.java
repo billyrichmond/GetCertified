@@ -20,4 +20,12 @@ public class CertServiceImpl implements CertService {
 
         return allCerts;
     }
+
+    @Override
+    public Cert getCertById(int certId) { return certRepository.getCertById(certId); }
+
+    @Override
+    public void addCert(Cert cert) {
+        certRepository.addCert(cert);
+    }
 }
