@@ -15,12 +15,24 @@
                 <div class="row">
                     <header class="col-md-12">
                         <h1>Exam</h1>
-                        <p>${exam.examName} - ${exam.examNumber}</p>
-                        <a class="btn btn-default btn-primary"
-                           href="/"
-                           role="button">Home
-                        </a>
+                        <h5>${exam.examName} - ${exam.examNumber}</h5>
+                        <h6>${cert.certName}</h6>
                     </header>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <a class="btn btn-primary btn-block" href="/" role="button">Home</a>
+                            </div>
+                            <div class="col-md-2">
+                                <a class="btn btn-primary btn-block" href="/exams" role="button">Exams</a>
+                            </div>
+                            <!--
+                            <div class="col-md-2">
+                                <a class="btn btn-primary btn-block" href="#" role="button">Add</a>
+                            </div>
+                            -->
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

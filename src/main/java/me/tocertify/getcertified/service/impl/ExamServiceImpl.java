@@ -28,10 +28,12 @@ public class ExamServiceImpl implements ExamService {
         return examRepository.getExamById(examId);
     }
 
+    /*
     @Override
     public List<ExamQuestion> getExamQuestions (int examId) {
         return examRepository.getExamQuestions(examId);
     }
+    */
 
     @Override
     public NewExam getNewExam() {

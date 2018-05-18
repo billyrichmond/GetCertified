@@ -35,12 +35,16 @@ public class ExamController {
     @RequestMapping("/exam")
     public String getExamById(@RequestParam("id") int examId, Model model) {
 
-        model.addAttribute("exam", examService.getExamById(examId));
+        Exam exam = examService.getExamById(examId);
+        Cert cert = certService.getCertById(exam.getCertId());
+        // model.addAttribute("exam", examService.getExamById(examId));
+        model.addAttribute("exam", exam);
+        model.addAttribute("cert", cert);
 
-        List<ExamQuestion> examQuestions = examService.getExamQuestions(examId);
-        model.addAttribute("examQuestions", examQuestions);
+        // List<ExamQuestion> examQuestions = examService.getExamQuestions(examId);
+        // model.addAttribute("examQuestions", examQuestions);
 
-        model.addAttribute("examQuestionsIsEmpty", examQuestions.isEmpty());
+        // model.addAttribute("examQuestionsIsEmpty", examQuestions.isEmpty());
 
         /*
         ExamQuestion examQuestion = new ExamQuestion("This is the examQuestion");

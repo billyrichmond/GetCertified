@@ -15,48 +15,35 @@
                 <div class="row">
                     <header class="col-md-12">
                         <h1>Certifications</h1>
-                        <p>Certification list</p>
                     </header>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-2">
-                            <a class="btn btn-primary btn-block" href="/">Home</a>
-                        </div>
-                        <div class="col-md-2">
-                            <a class="btn btn-primary btn-block" href="/addcert" role="button">Add</a>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <a class="btn btn-primary btn-block" href="/" role="button">Home</a>
+                            </div>
+                            <div class="col-md-2">
+                                <a class="btn btn-primary btn-block" href="/addcert" role="button">Add</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="list-group">
-                        <c:forEach items="${certs}" var="cert">
-                            <button type="button" href="#" class="list-group-item list-group-item-action">${cert.certName}</button>
-                        </c:forEach>
+            <div class="container rounded">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5>Certification List</h5>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="list-group">
+                            <c:forEach items="${certs}" var="cert">
+                                <button type="button" href="#" class="list-group-item list-group-item-action">${cert.certName}</button>
+                            </c:forEach>
+                        </div>
                     </div>
                 </div>
             </div>
-
-        <!--
-            <c:forEach items="${certs}" var="cert">
-                <div class="row">
-                    <div class="col-md-12">
-
-                            <div class="caption">
-                                <p>${cert.certName}</p>
-                            </div>
-
-                    </div>
-                </div>
-            </c:forEach>
-
-
-
-        -->
         </div>
 
         <!-- JavaScript -->

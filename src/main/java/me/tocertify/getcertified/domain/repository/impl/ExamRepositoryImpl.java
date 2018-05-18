@@ -37,14 +37,15 @@ public class ExamRepositoryImpl implements ExamRepository {
     }
 
     @Override
-    public Exam getExamById (int examId) {
-        String SQL = "SELECT * FROM exam WHERE exam_id = :examId";
+    public Exam getExamById (int exam_id) {
+        String SQL = "SELECT * FROM exam WHERE exam_id = :exam_id";
         Map<String, Object> params = new HashMap<>();
-        params.put("exam_id", examId);
+        params.put("exam_id", exam_id);
 
         return jdbcTemplate.queryForObject(SQL, params, new ExamMapper());
     }
 
+    /*
     @Override
     public List<ExamQuestion> getExamQuestions (int examId) {
         String SQL = "SELECT * FROM exam_question WHERE exam_id = :examId";
@@ -54,6 +55,7 @@ public class ExamRepositoryImpl implements ExamRepository {
 
         return examQuestions;
     }
+    */
 
     @Override
     public NewExam getNewExam() {
@@ -73,12 +75,16 @@ public class ExamRepositoryImpl implements ExamRepository {
             exam.setExamId(rs.getInt("exam_id"));
             exam.setExamName(rs.getString("exam_name"));
             exam.setExamNumber(rs.getString("exam_number"));
+            exam.setCertId(rs.getInt("cert_id"));
 
             return exam;
         }
     }
 
+
+//    TODO Update the following class.
     /* Inner class */
+    /*
     private static final class ExamQuestionMapper implements RowMapper<ExamQuestion> {
 
         public ExamQuestion mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -89,7 +95,7 @@ public class ExamRepositoryImpl implements ExamRepository {
 
             return examQuestion;
         }
-
     }
+    */
 }
 

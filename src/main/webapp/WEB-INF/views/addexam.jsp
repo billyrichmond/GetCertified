@@ -18,11 +18,11 @@
                         <h1>Add Exam</h1>
                         <p>Add a new exam</p>
                     </header>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-2">
-                            <a class="btn btn-primary btn-block" href="/">Home</a>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <a class="btn btn-primary btn-block" href="/">Home</a>
+                            </div>
                         </div>
                     </div>
                 </div>
