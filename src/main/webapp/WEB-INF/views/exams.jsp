@@ -7,7 +7,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <title> TBD </title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     </head>
     <body>
         <div class="container">
@@ -20,7 +20,12 @@
                 </div>
                 <div class="container">
                     <div class="row">
-                        <a class="btn btn-primary" href="/">Home</a>
+                        <div class="col-md-2">
+                            <a class="btn btn-primary btn-block" href="/">Home</a>
+                        </div>
+                        <div class="col-md-2">
+                            <a class="btn btn-primary btn-block" href="/addexam" role="button">Add</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -29,17 +34,17 @@
             <div class="row">
                 <c:forEach items="${exams}" var="exam">
                     <div class="col-md-6 col-md-3">
-                        <div class="thumbnail">
-                            <div class="caption">
-                                <h4>${exam.examName}</h4>
-                                <p>${exam.examNumber}</p>
-                                <p>
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">${exam.examName}</h4>
+                                <h6 class="card-subtitle text-muted">${exam.examNumber}</h6>
+                                <p class="card-text">
                                     <spring:url value="/exam?id=${exam.examId}" var="exam_id"/>
-                                    <a class="btn btn-default btn-primary"
-                                       href="${exam_id}"
-                                       role="button">Go
-                                    </a>
                                 </p>
+                                <a class="btn btn-default btn-primary"
+                                   href="${exam_id}"
+                                   role="button">Go
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -48,8 +53,8 @@
         </div>
 
         <!-- JavaScript -->
-        <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
-        <script src="node_modules/popper.js/dist/popper.min.js"></script>
-        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     </body>
 </html>

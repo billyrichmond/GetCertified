@@ -9,6 +9,7 @@ public class Exam implements Serializable {
     private int examId;
     private String examName;
     private String examNumber;
+    private int certId;
 
     public Exam() {
         super();
@@ -42,6 +43,12 @@ public class Exam implements Serializable {
 
     public void setExamNumber(String examNumber) {
         this.examNumber = examNumber;
+    }
+
+    public int getCertId() { return certId; }
+
+    public void setCertId(int certId) {
+        this.certId = certId;
     }
 
     @Override

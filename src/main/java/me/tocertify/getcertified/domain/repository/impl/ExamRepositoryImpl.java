@@ -1,8 +1,12 @@
 package me.tocertify.getcertified.domain.repository.impl;
 
+import me.tocertify.getcertified.domain.Cert;
 import me.tocertify.getcertified.domain.Exam;
 import me.tocertify.getcertified.domain.ExamQuestion;
+import me.tocertify.getcertified.domain.NewExam;
+import me.tocertify.getcertified.domain.repository.CertRepository;
 import me.tocertify.getcertified.domain.repository.ExamRepository;
+import me.tocertify.getcertified.service.CertService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -20,9 +24,12 @@ public class ExamRepositoryImpl implements ExamRepository {
     @Autowired
     private NamedParameterJdbcTemplate jdbcTemplate;
 
+    @Autowired
+    private CertService certService;
+
     @Override
     public List<Exam> getAllExams() {
-        String SQL = "SELECT * FROM EXAM";
+        String SQL = "SELECT * FROM exam";
         Map<String, Object> params = new HashMap<>();
         List<Exam> result = jdbcTemplate.query(SQL, params, new ExamMapper());
 
@@ -33,7 +40,7 @@ public class ExamRepositoryImpl implements ExamRepository {
     public Exam getExamById (int examId) {
         String SQL = "SELECT * FROM exam WHERE exam_id = :examId";
         Map<String, Object> params = new HashMap<>();
-        params.put("examId", examId);
+        params.put("exam_id", examId);
 
         return jdbcTemplate.queryForObject(SQL, params, new ExamMapper());
     }
@@ -46,6 +53,16 @@ public class ExamRepositoryImpl implements ExamRepository {
         List<ExamQuestion> examQuestions = jdbcTemplate.query(SQL, params, new ExamQuestionMapper());
 
         return examQuestions;
+    }
+
+    @Override
+    public NewExam getNewExam() {
+        NewExam newExam = new NewExam();
+
+        List<Cert> certList = certService.getAllCerts();
+        newExam.setCertList(certList);
+
+        return  newExam;
     }
 
     /* Inner class */
@@ -61,6 +78,7 @@ public class ExamRepositoryImpl implements ExamRepository {
         }
     }
 
+    /* Inner class */
     private static final class ExamQuestionMapper implements RowMapper<ExamQuestion> {
 
         public ExamQuestion mapRow(ResultSet rs, int rowNum) throws SQLException {

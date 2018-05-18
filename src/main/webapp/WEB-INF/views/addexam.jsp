@@ -7,7 +7,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        <title> Add Cert </title>
+        <title> Add Exam </title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     </head>
     <body>
@@ -15,8 +15,8 @@
             <div class="jumbotron">
                 <div class="row">
                     <header class="col-md-12">
-                        <h1>Add Cert</h1>
-                        <p>Add a new certification</p>
+                        <h1>Add Exam</h1>
+                        <p>Add a new exam</p>
                     </header>
                 </div>
                 <div class="container">
@@ -29,12 +29,15 @@
             </div>
         </div>
         <div class="container">
-            <form:form method="POST" modelAttribute="newCert">
+            <form:form method="POST" modelAttribute="newExam">
                 <fieldset>
-                    <legend>New Certification</legend>
+                    <legend>New Exam</legend>
                     <div class="form-group">
-                        <label class="control-label" for="certName">Certification Name:</label>
-                        <form:input id="certName" path="certName" type="text" class="form-control" autocomplete="off" pattern="^\w+[\w\s\-\,]*\w\$" required="true" autofocus="true"></form:input>
+                        <label class="control-label" for="certList">Certification Name:</label>
+                        <form:select class="form-control" id="certList" path="certList" multiple="false">
+                            <form:option value="NONE" label="Select"/>
+                            <form:options items="${newExam.certList}" itemLabel="certName" itemValue="certId"/>
+                        </form:select>
                     </div>
                     <button type="submit" class="btn btn-primary">Add</button>
                 </fieldset>

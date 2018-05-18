@@ -28,14 +28,14 @@ public class CertController {
     }
 
     @RequestMapping(value = "/addcert", method = RequestMethod.GET)
-    public String getAddCertCert(Model model) {
+    public String showForm(Model model) {
         Cert newCert = new Cert();
         model.addAttribute("newCert", newCert);
         return "addcert";
     }
 
     @RequestMapping(value = "/addcert", method = RequestMethod.POST)
-    public String processAddNewCert(Model model, Cert newCert) {
+    public String processForm(Model model, Cert newCert) {
         certService.addCert(newCert);
         return "redirect:/certs";
     }
